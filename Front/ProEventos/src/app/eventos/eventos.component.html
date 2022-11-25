@@ -1,15 +1,16 @@
 <h2>Eventos</h2>
 <hr>
-<form action="" class="form-inline">
+<div class="form-inline">
   <div class="row">
     <div class="col mb-2">
-      <input type="text" class="form-control mr-2" placeholder="buscar">
-    </div>
-    <div class="col">
-      <button class="btn btn-outline-success">Buscar</button>
+      <input type="text"
+      class="form-control mr-2"
+      placeholder="buscar"
+      [(ngModel)]="filtroLista"
+      >
     </div>
   </div>
-</form>
+</div>
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
@@ -28,9 +29,10 @@
     </tr>
   </thead>
   <tbody *ngIf="eventos && eventos.length">
-      <tr *ngFor="let evento of eventos">
+      <tr *ngFor="let evento of eventosFiltrados">
         <td>
-          <img *ngIf="mostrarImagem"
+          <img [collapse]="!mostrarImagem"
+          [isAnimated]="true"
           src="/assets/{{evento.imagemURL}}"
           [style.width.px] = "larguraImagem"
           [style.margin.px] = "margemImagem">
