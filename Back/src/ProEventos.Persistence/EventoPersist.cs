@@ -41,7 +41,7 @@ namespace ProEventos.Persistence
 
         public async Task<Evento> GetEventoByIdAsync(int eventoId, bool includePalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos.Include(e => e.Lotes).Include(e => e.RedesSociais);
+            IQueryable<Evento> query = _context.Eventos.Include(e => e.Lotes).Include(e => e.RedesSociais).AsNoTracking();
             
             if(includePalestrantes)
             {
