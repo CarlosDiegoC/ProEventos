@@ -16,6 +16,7 @@
     <tr>
       <th>
         <button type="button" class="btn btn-outline-light" (click)="exibirImagem()">
+          <i class="{{!mostrarImagem ? 'fa fa-eye' : 'fa fa-eye-slash'}}"></i>
           {{!mostrarImagem ? 'Exibir' : 'Ocultar'}}
         </button>
       </th>
@@ -37,13 +38,20 @@
           [style.width.px] = "larguraImagem"
           [style.margin.px] = "margemImagem">
         </td>
-        <td>{{evento.eventoId}}</td>
+        <td>{{evento.id}}</td>
         <td>{{evento.tema}}</td>
         <td>{{evento.local}}</td>
         <td>{{evento.dataEvento}}</td>
         <td>{{evento.qtdPessoas}}</td>
-        <td>{{evento.lote}}</td>
-        <td>Opções</td>
+        <td>{{evento.lotes[0].nome}}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm mr-2">
+            <i class="fa fa-edit"></i>
+            Editar</button>
+          <button type="button" class="btn btn-danger btn-sm">
+            <i class="fa fa-trash"></i>
+            Excluir</button>
+        </td>
       </tr>
   </tbody>
   <tfoot *ngIf="!eventos.length">
