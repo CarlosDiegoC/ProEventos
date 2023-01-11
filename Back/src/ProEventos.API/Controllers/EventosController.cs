@@ -108,6 +108,5 @@ namespace ProEventos.API.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao tentar deletar o evento. Erro: {ex.Message}");
             }
         }
-
     }
 }
