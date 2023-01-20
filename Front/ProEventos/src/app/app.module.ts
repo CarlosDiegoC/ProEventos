@@ -14,7 +14,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { TituloComponent } from './shared/titulo/titulo.component';
 import { EventosComponent } from './components/eventos/eventos.component';
@@ -52,6 +52,7 @@ import { PerfilComponent } from './components/user/perfil/perfil.component';
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
